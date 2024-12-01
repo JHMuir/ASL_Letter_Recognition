@@ -8,8 +8,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import LabelBinarizer
 import pandas as pd
 
-train_df = pd.read_csv("sign_mnist_train.csv")
-test_df = pd.read_csv("sign_mnist_test.csv")
+train_df = pd.read_csv("dataset/sign_mnist_train.csv")
+test_df = pd.read_csv("dataset/sign_mnist_test.csv")
 
 y_train = train_df['label']
 y_test = test_df['label']
@@ -64,5 +64,7 @@ model.compile(optimizer = 'adam' , loss = 'categorical_crossentropy' , metrics =
 model.summary()
 
 history = model.fit(datagen.flow(x_train,y_train, batch_size = 128) ,epochs = 20 , validation_data = (x_test, y_test))
+
+print(history)
 
 model.save('smnist.h5')
