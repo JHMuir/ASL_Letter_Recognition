@@ -3,7 +3,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 import cv2
 import mediapipe as mp
-from tensorflow.keras.models import load_model # For some reason, I need to add this in order for it to work for Mac
+# from tensorflow.keras.models import load_model # For some reason, I need to add this in order for it to work for Mac
+from keras.models import load_model
 import numpy as np
 
 # Load the trained model

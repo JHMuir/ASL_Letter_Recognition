@@ -7,7 +7,7 @@ import numpy as np
 import time
 import pandas as pd
 
-model = load_model('smnist.h5')
+model = load_model('asl_model.h5')
 
 mphands = mp.solutions.hands
 hands = mphands.Hands()
